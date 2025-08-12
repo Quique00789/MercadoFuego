@@ -1,0 +1,538 @@
+{
+  "categories": [
+    {
+      "id": "cat-beverages",
+      "name": "Bebidas",
+      "description": "Refrescos, jugos, agua y bebidas calientes"
+    },
+    {
+      "id": "cat-snacks",
+      "name": "Snacks",
+      "description": "Papas, galletas, dulces y botanas"
+    },
+    {
+      "id": "cat-dairy",
+      "name": "Lácteos",
+      "description": "Leche, queso, yogurt y derivados lácteos"
+    },
+    {
+      "id": "cat-bakery",
+      "name": "Panadería",
+      "description": "Pan, pasteles, galletas y productos horneados"
+    },
+    {
+      "id": "cat-meat",
+      "name": "Carnes",
+      "description": "Carnes frescas, embutidos y productos cárnicos"
+    },
+    {
+      "id": "cat-fruits",
+      "name": "Frutas y Verduras",
+      "description": "Productos frescos, frutas y vegetales"
+    },
+    {
+      "id": "cat-cleaning",
+      "name": "Limpieza",
+      "description": "Productos de limpieza y cuidado del hogar"
+    },
+    {
+      "id": "cat-personal",
+      "name": "Cuidado Personal",
+      "description": "Higiene personal y cuidado corporal"
+    },
+    {
+      "id": "cat-frozen",
+      "name": "Congelados",
+      "description": "Productos congelados y helados"
+    },
+    {
+      "id": "cat-canned",
+      "name": "Enlatados",
+      "description": "Conservas, enlatados y productos no perecederos"
+    }
+  ],
+  "products": [
+    {
+      "id": "BEB-001",
+      "name": "Coca-Cola 600ml",
+      "description": "Refresco de cola clásico en botella de vidrio",
+      "categoryId": "cat-beverages",
+      "sku": "BEB-001",
+      "minStock": 20,
+      "image": "https://images.pexels.com/photos/50593/coca-cola-cold-drink-soft-drink-coke-50593.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "price": 15.5,
+      "barcode": "7501055300013"
+    },
+    {
+      "id": "BEB-002",
+      "name": "Agua Natural 1L",
+      "description": "Agua purificada natural en botella de plástico",
+      "categoryId": "cat-beverages",
+      "sku": "BEB-002",
+      "minStock": 30,
+      "image": "https://images.pexels.com/photos/416528/pexels-photo-416528.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "price": 12.0,
+      "barcode": "7501055301001"
+    },
+    {
+      "id": "BEB-003",
+      "name": "Jugo de Naranja 1L",
+      "description": "Jugo natural de naranja pasteurizado",
+      "categoryId": "cat-beverages",
+      "sku": "BEB-003",
+      "minStock": 15,
+      "image": "https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "price": 28.0,
+      "barcode": "7501055302002"
+    },
+    {
+      "id": "BEB-004",
+      "name": "Cerveza Lager 355ml",
+      "description": "Cerveza tipo lager en lata",
+      "categoryId": "cat-beverages",
+      "sku": "BEB-004",
+      "minStock": 25,
+      "image": "https://images.pexels.com/photos/1552630/pexels-photo-1552630.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "price": 22.0,
+      "barcode": "7501055303003"
+    },
+    {
+      "id": "BEB-005",
+      "name": "Café Instantáneo 200g",
+      "description": "Café soluble instantáneo premium",
+      "categoryId": "cat-beverages",
+      "sku": "BEB-005",
+      "minStock": 10,
+      "image": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "price": 85.0,
+      "barcode": "7501055304004"
+    }
+
+    ,
+{
+  "id": "SNK-001",
+  "name": "Papas Fritas Clásicas 150g",
+  "description": "Papas fritas con sal, sabor original",
+  "categoryId": "cat-snacks",
+  "sku": "SNK-001",
+  "minStock": 20,
+  "image": "https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 32.0,
+  "barcode": "7501055305005"
+},
+{
+  "id": "SNK-002",
+  "name": "Galletas de Chocolate 300g",
+  "description": "Galletas crujientes con chispas de chocolate",
+  "categoryId": "cat-snacks",
+  "sku": "SNK-002",
+  "minStock": 15,
+  "image": "https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 45.0,
+  "barcode": "7501055306006"
+},
+{
+  "id": "SNK-003",
+  "name": "Cacahuates Salados 200g",
+  "description": "Cacahuates tostados con sal",
+  "categoryId": "cat-snacks",
+  "sku": "SNK-003",
+  "minStock": 18,
+  "image": "https://images.pexels.com/photos/1295572/pexels-photo-1295572.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 38.0,
+  "barcode": "7501055307007"
+},
+{
+  "id": "SNK-004",
+  "name": "Chocolate en Barra 100g",
+  "description": "Chocolate con leche premium",
+  "categoryId": "cat-snacks",
+  "sku": "SNK-004",
+  "minStock": 25,
+  "image": "https://images.pexels.com/photos/65882/chocolate-dark-coffee-confiserie-65882.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 28.0,
+  "barcode": "7501055308008"
+},
+{
+  "id": "SNK-005",
+  "name": "Gomitas de Frutas 250g",
+  "description": "Dulces gomosos sabores surtidos",
+  "categoryId": "cat-snacks",
+  "sku": "SNK-005",
+  "minStock": 12,
+  "image": "https://images.pexels.com/photos/3776942/pexels-photo-3776942.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 35.0,
+  "barcode": "7501055309009"
+},
+{
+  "id": "LAC-001",
+  "name": "Leche Entera 1L",
+  "description": "Leche fresca pasteurizada entera",
+  "categoryId": "cat-dairy",
+  "sku": "LAC-001",
+  "minStock": 25,
+  "image": "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 22.0,
+  "barcode": "7501055310010"
+},
+{
+  "id": "LAC-002",
+  "name": "Queso Oaxaca 400g",
+  "description": "Queso tipo Oaxaca para quesadillas",
+  "categoryId": "cat-dairy",
+  "sku": "LAC-002",
+  "minStock": 15,
+  "image": "https://images.pexels.com/photos/773253/pexels-photo-773253.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 65.0,
+  "barcode": "7501055311011"
+},
+{
+  "id": "LAC-003",
+  "name": "Yogurt Natural 1L",
+  "description": "Yogurt natural sin azúcar añadida",
+  "categoryId": "cat-dairy",
+  "sku": "LAC-003",
+  "minStock": 20,
+  "image": "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 35.0,
+  "barcode": "7501055312012"
+},
+{
+  "id": "LAC-004",
+  "name": "Mantequilla 200g",
+  "description": "Mantequilla sin sal para cocinar",
+  "categoryId": "cat-dairy",
+  "sku": "LAC-004",
+  "minStock": 18,
+  "image": "https://images.pexels.com/photos/479643/pexels-photo-479643.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 42.0,
+  "barcode": "7501055313013"
+},
+{
+  "id": "LAC-005",
+  "name": "Crema Ácida 200ml",
+  "description": "Crema ácida para acompañar platillos",
+  "categoryId": "cat-dairy",
+  "sku": "LAC-005",
+  "minStock": 12,
+  "image": "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 28.0,
+  "barcode": "7501055314014"
+},
+{
+  "id": "PAN-001",
+  "name": "Pan de Caja Integral 680g",
+  "description": "Pan de caja integral con fibra",
+  "categoryId": "cat-bakery",
+  "sku": "PAN-001",
+  "minStock": 15,
+  "image": "https://images.pexels.com/photos/209206/pexels-photo-209206.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 38.0,
+  "barcode": "7501055315015"
+},
+{
+  "id": "PAN-002",
+  "name": "Tortillas de Harina 1kg",
+  "description": "Tortillas de harina de trigo frescas",
+  "categoryId": "cat-bakery",
+  "sku": "PAN-002",
+  "minStock": 20,
+  "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 32.0,
+  "barcode": "7501055316016"
+},
+{
+  "id": "PAN-003",
+  "name": "Donas Glaseadas 6 pzs",
+  "description": "Donas dulces con glaseado de azúcar",
+  "categoryId": "cat-bakery",
+  "sku": "PAN-003",
+  "minStock": 10,
+  "image": "https://images.pexels.com/photos/205961/pexels-photo-205961.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 55.0,
+  "barcode": "7501055317017"
+},
+{
+  "id": "PAN-004",
+  "name": "Muffins de Arándano 4 pzs",
+  "description": "Muffins esponjosos con arándanos",
+  "categoryId": "cat-bakery",
+  "sku": "PAN-004",
+  "minStock": 8,
+  "image": "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 48.0,
+  "barcode": "7501055318018"
+}
+,
+{
+  "id": "CAR-001",
+  "name": "Pechuga de Pollo 1kg",
+  "description": "Pechuga de pollo fresca sin hueso",
+  "categoryId": "cat-meat",
+  "sku": "CAR-001",
+  "minStock": 10,
+  "image": "https://images.pexels.com/photos/616354/pexels-photo-616354.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 120.0,
+  "barcode": "7501055319019"
+},
+{
+  "id": "CAR-002",
+  "name": "Carne Molida de Res 500g",
+  "description": "Carne molida fresca de res",
+  "categoryId": "cat-meat",
+  "sku": "CAR-002",
+  "minStock": 8,
+  "image": "https://images.pexels.com/photos/1268549/pexels-photo-1268549.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 85.0,
+  "barcode": "7501055320020"
+},
+{
+  "id": "CAR-003",
+  "name": "Jamón de Pavo 200g",
+  "description": "Jamón de pavo bajo en grasa",
+  "categoryId": "cat-meat",
+  "sku": "CAR-003",
+  "minStock": 12,
+  "image": "https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 65.0,
+  "barcode": "7501055321021"
+},
+{
+  "id": "CAR-004",
+  "name": "Salchichas de Pavo 500g",
+  "description": "Salchichas de pavo para hot dogs",
+  "categoryId": "cat-meat",
+  "sku": "CAR-004",
+  "minStock": 15,
+  "image": "https://images.pexels.com/photos/4518843/pexels-photo-4518843.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 58.0,
+  "barcode": "7501055322022"
+},
+
+{
+  "id": "FRU-001",
+  "name": "Plátanos 1kg",
+  "description": "Plátanos frescos maduros",
+  "categoryId": "cat-fruits",
+  "sku": "FRU-001",
+  "minStock": 20,
+  "image": "https://images.pexels.com/photos/61127/pexels-photo-61127.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 25.0,
+  "barcode": "7501055323023"
+},
+{
+  "id": "FRU-002",
+  "name": "Manzanas Rojas 1kg",
+  "description": "Manzanas rojas frescas y crujientes",
+  "categoryId": "cat-fruits",
+  "sku": "FRU-002",
+  "minStock": 18,
+  "image": "https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 45.0,
+  "barcode": "7501055324024"
+},
+{
+  "id": "FRU-003",
+  "name": "Tomates 1kg",
+  "description": "Tomates frescos para ensaladas",
+  "categoryId": "cat-fruits",
+  "sku": "FRU-003",
+  "minStock": 15,
+  "image": "https://images.pexels.com/photos/533280/pexels-photo-533280.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 35.0,
+  "barcode": "7501055325025"
+},
+{
+  "id": "FRU-004",
+  "name": "Cebollas 1kg",
+  "description": "Cebollas blancas frescas",
+  "categoryId": "cat-fruits",
+  "sku": "FRU-004",
+  "minStock": 12,
+  "image": "https://images.pexels.com/photos/533342/pexels-photo-533342.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 28.0,
+  "barcode": "7501055326026"
+},
+{
+  "id": "FRU-005",
+  "name": "Aguacates 3 pzs",
+  "description": "Aguacates frescos listos para consumir",
+  "categoryId": "cat-fruits",
+  "sku": "FRU-005",
+  "minStock": 25,
+  "image": "https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 42.0,
+  "barcode": "7501055327027"
+},
+
+{
+  "id": "LIM-001",
+  "name": "Detergente Líquido 1L",
+  "description": "Detergente líquido para ropa",
+  "categoryId": "cat-cleaning",
+  "sku": "LIM-001",
+  "minStock": 10,
+  "image": "https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 65.0,
+  "barcode": "7501055328028"
+},
+{
+  "id": "LIM-002",
+  "name": "Papel Higiénico 4 rollos",
+  "description": "Papel higiénico suave doble hoja",
+  "categoryId": "cat-cleaning",
+  "sku": "LIM-002",
+  "minStock": 20,
+  "image": "https://images.pexels.com/photos/4239013/pexels-photo-4239013.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 38.0,
+  "barcode": "7501055329029"
+},
+{
+  "id": "LIM-003",
+  "name": "Limpiador Multiusos 500ml",
+  "description": "Limpiador desinfectante multiusos",
+  "categoryId": "cat-cleaning",
+  "sku": "LIM-003",
+  "minStock": 15,
+  "image": "https://images.pexels.com/photos/4239119/pexels-photo-4239119.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 42.0,
+  "barcode": "7501055330030"
+},
+{
+  "id": "LIM-004",
+  "name": "Esponjas de Cocina 3 pzs",
+  "description": "Esponjas para lavar trastes",
+  "categoryId": "cat-cleaning",
+  "sku": "LIM-004",
+  "minStock": 25,
+  "image": "https://images.pexels.com/photos/4239072/pexels-photo-4239072.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 22.0,
+  "barcode": "7501055331031"
+},
+
+{
+  "id": "PER-001",
+  "name": "Champú 400ml",
+  "description": "Champú para todo tipo de cabello",
+  "categoryId": "cat-personal",
+  "sku": "PER-001",
+  "minStock": 12,
+  "image": "https://images.pexels.com/photos/4465831/pexels-photo-4465831.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 55.0,
+  "barcode": "7501055332032"
+},
+{
+  "id": "PER-002",
+  "name": "Pasta Dental 100ml",
+  "description": "Pasta dental con flúor",
+  "categoryId": "cat-personal",
+  "sku": "PER-002",
+  "minStock": 18,
+  "image": "https://images.pexels.com/photos/298663/pexels-photo-298663.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 32.0,
+  "barcode": "7501055333033"
+},
+{
+  "id": "PER-003",
+  "name": "Desodorante 150ml",
+  "description": "Desodorante antitranspirante",
+  "categoryId": "cat-personal",
+  "sku": "PER-003",
+  "minStock": 15,
+  "image": "https://images.pexels.com/photos/4465815/pexels-photo-4465815.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 48.0,
+  "barcode": "7501055334034"
+},
+{
+  "id": "PER-004",
+  "name": "Jabón de Manos 250ml",
+  "description": "Jabón líquido antibacterial",
+  "categoryId": "cat-personal",
+  "sku": "PER-004",
+  "minStock": 20,
+  "image": "https://images.pexels.com/photos/4465828/pexels-photo-4465828.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 35.0,
+  "barcode": "7501055335035"
+},
+
+{
+  "id": "CON-001",
+  "name": "Pizza Congelada Pepperoni",
+  "description": "Pizza congelada con pepperoni",
+  "categoryId": "cat-frozen",
+  "sku": "CON-001",
+  "minStock": 8,
+  "image": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 85.0,
+  "barcode": "7501055336036"
+},
+{
+  "id": "CON-002",
+  "name": "Helado de Vainilla 1L",
+  "description": "Helado cremoso sabor vainilla",
+  "categoryId": "cat-frozen",
+  "sku": "CON-002",
+  "minStock": 10,
+  "image": "https://images.pexels.com/photos/1362534/pexels-photo-1362534.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 75.0,
+  "barcode": "7501055337037"
+},
+{
+  "id": "CON-003",
+  "name": "Verduras Mixtas Congeladas 500g",
+  "description": "Mezcla de verduras congeladas",
+  "categoryId": "cat-frozen",
+  "sku": "CON-003",
+  "minStock": 12,
+  "image": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 45.0,
+  "barcode": "7501055338038"
+},
+
+{
+  "id": "ENL-001",
+  "name": "Frijoles Negros Enlatados 400g",
+  "description": "Frijoles negros cocidos en lata",
+  "categoryId": "cat-canned",
+  "sku": "ENL-001",
+  "minStock": 20,
+  "image": "https://images.pexels.com/photos/6287520/pexels-photo-6287520.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 28.0,
+  "barcode": "7501055339039"
+},
+{
+  "id": "ENL-002",
+  "name": "Atún en Agua 140g",
+  "description": "Atún en trozos en agua",
+  "categoryId": "cat-canned",
+  "sku": "ENL-002",
+  "minStock": 25,
+  "image": "https://images.pexels.com/photos/6287461/pexels-photo-6287461.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 32.0,
+  "barcode": "7501055340040"
+},
+{
+  "id": "ENL-003",
+  "name": "Salsa de Tomate 400g",
+  "description": "Salsa de tomate natural enlatada",
+  "categoryId": "cat-canned",
+  "sku": "ENL-003",
+  "minStock": 18,
+  "image": "https://images.pexels.com/photos/6287334/pexels-photo-6287334.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 25.0,
+  "barcode": "7501055341041"
+},
+{
+  "id": "ENL-004",
+  "name": "Chiles Jalapeños 220g",
+  "description": "Chiles jalapeños en escabeche",
+  "categoryId": "cat-canned",
+  "sku": "ENL-004",
+  "minStock": 15,
+  "image": "https://images.pexels.com/photos/6287378/pexels-photo-6287378.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "price": 22.0,
+  "barcode": "7501055342042"
+}
+  ],
+  "transactions": []
+}
