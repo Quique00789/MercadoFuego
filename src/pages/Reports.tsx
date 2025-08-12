@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useInventory, InventoryMethod } from '../contexts/InventoryContext';
 import { PieChart, Printer, Download, FileText, Filter } from 'lucide-react';
+import { exportToExcel } from '../utils/excelExport';
+import toast from 'react-hot-toast';
 
 const Reports: React.FC = () => {
   const { products, calculateInventoryCost, getProductTransactions } = useInventory();
@@ -11,6 +13,15 @@ const Reports: React.FC = () => {
   const [startDate, setStartDate] = useState<string>('');
   const [endDate, setEndDate] = useState<string>(new Date().toISOString().split('T')[0]);
   const [showReport, setShowReport] = useState(false);
+  
+  // Estados para supuestos del reporte
+  const [assumptions, setAssumptions] = useState({
+    quantitySold: 0,
+    salePrice: 0,
+    operationalIncome: 0,
+    nonOperationalExpenses: 0,
+    taxRate: 25 // 25% por defecto
+  });
   
   // Informar datos
   const [reportData, setReportData] = useState<{
@@ -38,6 +49,44 @@ const Reports: React.FC = () => {
   
   const handlePrint = () => {
     window.print();
+  };
+  
+  const handleExportToExcel = () => {
+    if (!reportData || !productId) {
+      toast.error('Debe generar un reporte primero');
+      return;
+    }
+    
+    try {
+      const productName = getProductName(productId);
+      const methodName = inventoryMethod === 'PEPS' ? 'Primeras Entradas, Primeras Salidas' :
+                        inventoryMethod === 'UEPS' ? 'Últimas Entradas, Primeras Salidas' :
+                        'Costo Promedio Ponderado';
+      
+      exportToExcel({
+        productName,
+        method: methodName,
+        startDate,
+        endDate,
+        entries: reportData.entries,
+        exits: reportData.exits,
+        remainingStock: reportData.remainingStock,
+        totalCost: reportData.totalCost,
+        averageCost: reportData.averageCost
+      }, assumptions);
+      
+      toast.success('Reporte exportado exitosamente');
+    } catch (error) {
+      toast.error('Error al exportar el reporte');
+      console.error(error);
+    }
+  };
+  
+  const handleAssumptionChange = (field: string, value: number) => {
+    setAssumptions(prev => ({
+      ...prev,
+      [field]: value
+    }));
   };
   
   // Obtener el nombre del producto por ID
@@ -164,6 +213,7 @@ const Reports: React.FC = () => {
               </button>
               
               <button
+                onClick={handleExportToExcel}
                 disabled={!showReport}
                 className={`flex items-center w-full px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
                   !showReport ? 'opacity-50 cursor-not-allowed' : ''
@@ -186,6 +236,80 @@ const Reports: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Supuestos para el reporte */}
+      {showReport && (
+        <div className="bg-white shadow rounded-lg p-6">
+          <h2 className="text-lg font-medium text-gray-900 mb-4">Supuestos para Estado de Resultados</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Cantidad Vendida
+              </label>
+              <input
+                type="number"
+                min="0"
+                value={assumptions.quantitySold}
+                onChange={(e) => handleAssumptionChange('quantitySold', Number(e.target.value))}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Precio de Venta ($)
+              </label>
+              <input
+                type="number"
+                min="0"
+                step="0.01"
+                value={assumptions.salePrice}
+                onChange={(e) => handleAssumptionChange('salePrice', Number(e.target.value))}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Ingresos Operacionales ($)
+              </label>
+              <input
+                type="number"
+                min="0"
+                step="0.01"
+                value={assumptions.operationalIncome}
+                onChange={(e) => handleAssumptionChange('operationalIncome', Number(e.target.value))}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Egresos No Operacionales ($)
+              </label>
+              <input
+                type="number"
+                min="0"
+                step="0.01"
+                value={assumptions.nonOperationalExpenses}
+                onChange={(e) => handleAssumptionChange('nonOperationalExpenses', Number(e.target.value))}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Tasa Impositiva (%)
+              </label>
+              <input
+                type="number"
+                min="0"
+                max="100"
+                step="0.1"
+                value={assumptions.taxRate}
+                onChange={(e) => handleAssumptionChange('taxRate', Number(e.target.value))}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Report Results */}
       {showReport && reportData && (
@@ -316,6 +440,57 @@ const Reports: React.FC = () => {
                 <p className="text-gray-500">No hay salidas en el período seleccionado</p>
               )}
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Vista previa del Estado de Resultados */}
+      {showReport && reportData && (
+        <div className="bg-white shadow rounded-lg p-6">
+          <h2 className="text-lg font-medium text-gray-900 mb-4">
+            Estado de Resultados - Método {
+              inventoryMethod === 'PEPS' ? 'PEPS' :
+              inventoryMethod === 'UEPS' ? 'UEPS' :
+              'Promedio Ponderado'
+            }
+          </h2>
+          <div className="space-y-2">
+            {(() => {
+              const grossSales = assumptions.quantitySold * assumptions.salePrice;
+              const costOfSales = assumptions.quantitySold * reportData.averageCost;
+              const grossProfit = grossSales - costOfSales;
+              const profitBeforeTax = grossProfit + assumptions.operationalIncome - assumptions.nonOperationalExpenses;
+              const taxes = profitBeforeTax * (assumptions.taxRate / 100);
+              const netProfit = profitBeforeTax - taxes;
+              
+              return (
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="font-medium">Ventas Brutas:</div>
+                  <div className="text-right">${grossSales.toFixed(2)}</div>
+                  
+                  <div className="font-medium">Costo de Ventas:</div>
+                  <div className="text-right">${costOfSales.toFixed(2)}</div>
+                  
+                  <div className="font-medium border-t pt-2">Utilidad Bruta en Ventas:</div>
+                  <div className="text-right border-t pt-2">${grossProfit.toFixed(2)}</div>
+                  
+                  <div className="font-medium">+ Ingresos No Operacionales:</div>
+                  <div className="text-right">${assumptions.operationalIncome.toFixed(2)}</div>
+                  
+                  <div className="font-medium">- Gastos No Operacionales:</div>
+                  <div className="text-right">${assumptions.nonOperationalExpenses.toFixed(2)}</div>
+                  
+                  <div className="font-medium border-t pt-2">= Utilidad Antes de Impuestos:</div>
+                  <div className="text-right border-t pt-2">${profitBeforeTax.toFixed(2)}</div>
+                  
+                  <div className="font-medium">- Impuestos ({assumptions.taxRate}%):</div>
+                  <div className="text-right">${taxes.toFixed(2)}</div>
+                  
+                  <div className="font-bold text-lg border-t pt-2 text-green-600">UTILIDAD NETA:</div>
+                  <div className="text-right font-bold text-lg border-t pt-2 text-green-600">${netProfit.toFixed(2)}</div>
+                </div>
+              );
+            })()}
           </div>
         </div>
       )}
